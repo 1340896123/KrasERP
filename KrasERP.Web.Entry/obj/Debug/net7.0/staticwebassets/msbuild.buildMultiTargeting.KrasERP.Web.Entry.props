@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\KrasERP.Web.Entry.props" />
+</Project>

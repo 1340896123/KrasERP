@@ -1,0 +1,130 @@
+﻿@*@page "/MainGrid"*@
+
+@using System.Data;
+@using Furion.ClayObject;
+@using Furion.DatabaseAccessor;
+@using Furion.FriendlyException;
+@using KrasERP.Core.Mappers;
+@using KrasERP.Core.Models;
+@using System.Diagnostics.CodeAnalysis;
+@using KrasERP.Core.SeedDatas;
+@using KrasERP.Web.Entry.Models;
+@using Microsoft.Extensions.Localization;
+@using System.ComponentModel.DataAnnotations;
+@using Newtonsoft.Json.Linq;
+<Table TItem="CustomDynamicColumnsObjectData" Items="CustomDynamicItems" IsFixedHeader="true" Height="screenHeight"
+       IsStriped="true" IsBordered="true" ShowToolbar="true" ShowColumnList="true" ShowDefaultButtons="false" ShowRefresh="false"
+       IsPagination="true" PageItemsSource="@PageItemsSource"
+       IsMultipleSelect="true"
+       ShowSkeleton="true" ShowFilterHeader="true" OnDoubleClickRowCallback="@DoubleClickRowCallback">
+    <TableColumns>
+        @*<TableColumn @bind-Field="@context.Fix" Sortable="true" Filterable="true" />*@
+        @foreach (var element in StaticColumnList)
+        {
+            <TableColumn Field="@element" FieldName="@element" Width="180" Text="@element" Sortable="true" Filterable="true">
+                <Template Context="v">
+                    <div>@v.Value</div>
+                </Template>
+            </TableColumn>
+        }
+    </TableColumns>
+</Table>
+@code {
+    public delegate Task<Tab?> MyDelegate();
+    [Parameter]
+    public Tab? TabSet { get; set; }
+    //[Parameter]
+    //public EventCallback AddFormTab { get; set; }
+    [Parameter]
+    public Func<CustomDynamicColumnsObjectData, JArray, Task> AddFormTab { get; set; }
+
+    public IEnumerable<int> PageItemsSource => new int[] { 4, 10, 20 };
+    [Parameter]
+    public Guid itemTypeId { get; set; } = ItemTypeInfoSeedData.ItemTypeID;
+    [NotNull]
+    private IEnumerable<CustomDynamicColumnsObjectData>? CustomDynamicItems { get; set; }
+    [NotNull]
+    private List<string> StaticColumnList { get; set; }
+
+    private JArray BasePropertys { get; set; }
+
+
+
+    /// <summary>
+    /// OnInitialized
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        System.Console.WriteLine("MainGrid:OnInitialized");
+        var tableName = sqlRepository.SqlScalar($"select Name from kras.ItemType  where Id=@itemTypeId", new { itemTypeId });
+        var tableData = sqlRepository.SqlQuery($"select *  from  kras.{tableName}");
+        var propInfos = sqlRepository.SqlQuery("select *  from  kras.property where  sourceid=@itemTypeId", new { itemTypeId });
+        var dataRows = MapperUtils.DataTable2JArray(tableData);
+        var propRows = MapperUtils.DataTable2JArray(propInfos);
+        BasePropertys = propRows;
+        StaticColumnList = propRows.Where(l => (bool)l[nameof(BasePropertyInfo.Searchable).ToLower()]).Select(l => l["name"].ToString()).ToList();
+        CustomDynamicItems =
+    Enumerable.Range(0, dataRows.Count).Select(index => new CustomDynamicColumnsObjectData(dataRows[index]["id"].ToString(),
+    StaticColumnList.ToDictionary(d => d, d => (object?)$"{dataRows[index][d]}")));
+
+        base.OnInitialized();
+        // StateHasChanged();
+
+    }
+
+
+    private int screenWidth;
+    private int screenHeight;
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        System.Console.WriteLine("MainGrid:OnAfterRenderAsync");
+        var resolution = await JSRuntime.InvokeAsync<Object>("getClientResolution", "1");
+        var json = resolution.ToString();
+        var obj = JObject.Parse(json);
+        // await JSRuntime.InvokeAsync<Tuple<int, int>>("getClientResolution");
+        screenWidth = Convert.ToInt32(obj["width"]);
+        screenHeight = Convert.ToInt32(obj["height"]);
+        StateHasChanged();
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override bool ShouldRender()
+    {
+        System.Console.WriteLine("MainGrid:ShouldRender");
+        return base.ShouldRender();
+    }
+
+
+    private async Task DoubleClickRowCallback(CustomDynamicColumnsObjectData item)
+    {
+        System.Console.WriteLine("MainGrid:DoubleClickRowCallback");
+        var cate = ToastCategory.Success;
+        var title = "双击行回调委托示例";
+        var content = $"选中行数据为名称 {item.Fix} 的数据";
+        await ToastService.Show(new ToastOption()
+            {
+                Category = cate,
+                Title = title,
+                Content = content
+            });
+        await AddFormTab.Invoke(item, BasePropertys);
+        //TabSet.AddTab(new Dictionary<string, object>()
+        //    {
+        //        [nameof(TabItem.Text)] = item.GetValue("keyedname").ToString() == "" ? item.GetValue("name") : item.GetValue("keyedname"),
+        //        [nameof(TabItem.ChildContent)] = new RenderFragment((builder) =>
+        //        {
+        //            builder.OpenComponent<FormCompont>(0);
+        //            builder.AddAttribute(1, "ItemTypeID", Guid.Parse(item.Fix));
+        //            builder.AddAttribute(2, "Item", item);
+        //            builder.AddAttribute(2, "BasePropertys", BasePropertys);
+        //            builder.CloseComponent();
+        //        }),
+        //    });
+
+    }
+
+
+
+}

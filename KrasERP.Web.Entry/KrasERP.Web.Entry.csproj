@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
+		<PublishReadyToRunComposite>true</PublishReadyToRunComposite>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+	  <Compile Remove="Pages\Core\**" />
+	  <Content Remove="Pages\Core\**" />
+	  <EmbeddedResource Remove="Pages\Core\**" />
+	  <None Remove="Pages\Core\**" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Include="wwwroot\js\Utils.js" />
+	</ItemGroup>
+
+
+
+
+	<ItemGroup>
+		<PackageReference Include="BootstrapBlazor" Version="7.6.6" />
+		<PackageReference Include="BootstrapBlazor.FontAwesome" Version="7.4.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Radzen.Blazor" Version="4.11.1" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\KrasERP.Web.Core\KrasERP.Web.Core.csproj" />
+	</ItemGroup>
+
+</Project>

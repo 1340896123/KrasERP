@@ -1,0 +1,41 @@
+﻿
+@page "/dyn"
+@using System.Data;
+@using System.Diagnostics.CodeAnalysis;
+@using KrasERP.Core.Models;
+@using System.ComponentModel.DataAnnotations;
+@using Microsoft.Extensions.Localization;
+@*@inject IStringLocalizer<Foo> Localizer*@
+<Table TItem="DynamicObject" DynamicContext="DataTableDynamicContext" />
+
+@code {
+    [NotNull]
+    private DataTableDynamicContext? DataTableDynamicContext { get; set; }
+
+    private DataTable UserData { get; } = new DataTable();
+
+    /// <summary>
+    /// OnInitialized 方法
+    /// </summary>
+    protected override void OnInitialized()
+    {
+
+        base.OnInitialized();
+    }
+
+   
+
+    private DataTable PageDataTable { get; set; } = new DataTable();
+
+    private int PageItems { get; set; }
+
+    private int TotalCount { get; set; }
+
+    private int PageIndex { get; set; } = 1;
+
+    private int PageCount { get; set; }
+
+    [NotNull]
+    private List<Foo>? PageFoos { get; set; }
+
+}

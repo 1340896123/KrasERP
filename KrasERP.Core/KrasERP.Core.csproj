@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<NoWarn>1701;1702;1591</NoWarn>
+		<DocumentationFile>KrasERP.Core.xml</DocumentationFile>
+	</PropertyGroup>
+
+
+
+	<ItemGroup>
+		<None Remove="KrasERP.Core.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Collection" Version="9.0.0" />
+		<PackageReference Include="AutoMapper.Data" Version="7.0.2" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Furion" Version="4.8.8.10" />
+		<PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="4.8.8.10" />
+		<PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.8.8.10" />
+		<PackageReference Include="Irony.NetCore" Version="1.1.11" />
+		<PackageReference Include="Npgsql" Version="7.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+</Project>

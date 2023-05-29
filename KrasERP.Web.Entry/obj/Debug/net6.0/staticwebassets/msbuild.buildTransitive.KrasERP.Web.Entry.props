@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\KrasERP.Web.Entry.props" />
+</Project>

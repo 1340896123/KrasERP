@@ -1,0 +1,13 @@
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\bin\Debug\net6.0\KrasERP.Core.deps.json
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\bin\Debug\net6.0\KrasERP.Core.dll
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\bin\Debug\net6.0\KrasERP.Core.pdb
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\bin\Debug\net6.0\KrasERP.Core.xml
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.csproj.AssemblyReference.cache
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.AssemblyInfoInputs.cache
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.AssemblyInfo.cs
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.csproj.CoreCompileInputs.cache
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.dll
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\refint\KrasERP.Core.dll
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\KrasERP.Core.pdb
+C:\Users\jieok\Desktop\KrasERP-master\KrasERP.Core\obj\Debug\net6.0\ref\KrasERP.Core.dll

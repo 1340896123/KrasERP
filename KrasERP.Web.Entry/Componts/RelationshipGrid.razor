@@ -1,0 +1,117 @@
+﻿@page "/RGrid"
+
+@using System.Data;
+@using Furion.DatabaseAccessor;
+@using Furion.FriendlyException;
+@using KrasERP.Core.Mappers;
+@using KrasERP.Core.Models;
+@using System.Diagnostics.CodeAnalysis;
+@using KrasERP.Core.SeedDatas;
+@using Microsoft.Extensions.Localization;
+@using System.ComponentModel.DataAnnotations;
+@using Newtonsoft.Json.Linq;
+@inject ISqlRepository sqlRepository;
+
+<Table TItem="DynamicObject" DynamicContext="DataTableDynamicContext" />
+
+@code {
+    public string tableName { get; set; }
+    public Guid itemTypeId { get; set; } = ItemTypeInfoSeedData.ItemTypeID;
+
+    [NotNull]
+    private DataTableDynamicContext? DataTableDynamicContext { get; set; }
+
+    private DataTable UserData { get; set; } = new DataTable();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        // 初始化 DataTable
+        await InitDataTable();
+
+        // 初始化分页表格
+        await InitPageDataTable();
+    }
+
+
+
+    private async Task CreateContext()
+    {
+
+
+
+        var propInfos = await sqlRepository.SqlQueryAsync("select *  from  kras.property where  sourceid=@itemTypeId", new { itemTypeId });
+
+
+        var propsRows = MapperUtils.DataTable2JArray(propInfos);
+        DataTableDynamicContext = new DataTableDynamicContext(UserData, (context, col) =>
+        {
+            var propertyName = col.GetFieldName();
+            JObject row = propsRows.Where(l => l[nameof(BasePropertyInfo.Name).ToString().ToLower()].ToString() == propertyName)?.FirstOrDefault() as JObject;//?? throw Oops.Bah($"未找到属性名为{propertyName}的属性数据"); ;
+            col.Filterable = true;
+            context.AddDisplayAttribute(propertyName, new KeyValuePair<string, object?>[]
+    {
+          new(nameof(DisplayAttribute.Name), row?[nameof(BasePropertyInfo.Label).ToString().ToLower()]?.ToString()?.ToString()??propertyName )
+        });
+
+            col.Filterable = true;
+            col.Width = int.Parse(row?[nameof(BasePropertyInfo.GridWidth).ToString().ToLower()]?.ToString() ?? "180");
+            col.Text = row?[nameof(BasePropertyInfo.Label).ToString().ToLower()]?.ToString() ?? row?[nameof(BasePropertyInfo.Name).ToString().ToLower()]?.ToString() ?? propertyName;
+            col.Filterable = true;
+        });
+    }
+
+    private async Task InitDataTable()
+    {
+
+        tableName = (string)await sqlRepository.SqlScalarAsync($"select Name from kras.ItemType  where Id=@itemTypeId", new { itemTypeId });
+        var sql = $"select *  from  kras.ItemType";
+        var tableData = await sqlRepository.SqlQueryAsync(sql);
+        UserData = tableData;
+
+        await CreateContext();
+    }
+
+    private DataTable PageDataTable { get; set; } = new DataTable();
+
+    private int PageItems { get; set; }
+
+    private int TotalCount { get; set; }
+
+    private int PageIndex { get; set; } = 1;
+
+    private int PageCount { get; set; }
+
+
+
+    private async Task InitPageDataTable()
+    {
+        PageDataTable.Columns.Add(nameof(Foo.Id), typeof(int));
+        PageDataTable.Columns.Add(nameof(Foo.DateTime), typeof(DateTime));
+        PageDataTable.Columns.Add(nameof(Foo.Name), typeof(string));
+        PageDataTable.Columns.Add(nameof(Foo.Count), typeof(int));
+
+
+
+        PageIndex = 1;
+        PageItems = 2;
+        PageCount = (int)Math.Ceiling(TotalCount / 2.0);
+
+        await RebuildPageDataTable();
+    }
+
+    private async Task RebuildPageDataTable()
+    {
+        await Task.Run(() =>
+          {
+              PageDataTable.Rows.Clear();
+              //// 此处代码可以通过数据库获得分页后的数据转化成 DataTable 再给 DynamicContext 即可实现数据库分页
+              //foreach (var f in PageFoos.Skip((PageIndex - 1) * PageItems).Take(PageItems).ToList())
+              //{
+              //    PageDataTable.Rows.Add(f.Id, f.DateTime, f.Name, f.Count);
+              //}
+              PageDataTable.AcceptChanges();
+          });
+    }
+}

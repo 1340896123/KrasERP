@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KrasERP.Core</name>
+    </assembly>
+    <members>
+        <member name="M:KrasERP.Core.DataBase.NpgsqlHelper.TableExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.DataBase.NpgsqlHelper.CreateTableAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.DataBase.NpgsqlHelper.QueryHasConstra(System.String,System.String,KrasERP.Core.DataBase.ConstraintType)">
+            <summary>
+            获取是关于某列是否有约束
+            </summary>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <param name="constraintType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.DataBase.NpgsqlHelper.IsValidIdentifier(System.String[])">
+            <summary>
+            验证表名和列名是否包含特殊字符
+            </summary>
+            <param name="identifiers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.DataBase.NpgsqlHelper.IsValidDefaultValueAsync(System.String,System.String,System.String)">
+            <summary>
+            验证默认值是否为列类型相同的类型
+            </summary>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaeView.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaeView.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.FieldType">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.PropertyInfo">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseField.Source">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="T:KrasERP.Core.Models.BaseForm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseForm.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseForm.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BaseForm.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.PlaceholderText">
+            <summary>
+            占位文本
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.GridWidth">
+            <summary>
+            网格宽度
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.HelpText">
+            <summary>
+            帮助文本
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Required">
+            <summary>
+            必须
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Unique">
+            <summary>
+            唯一
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Index">
+            <summary>
+            创建索引
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Searchable">
+            <summary>
+            主网格是否显示
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Auditable">
+            <summary>
+            开启审计
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.System">
+            <summary>
+            是否系统字段
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.EnableSecurity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.SourceID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Regex">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.PropertyDataType">
+            <summary>
+            属性类型
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Format">
+            <summary>
+            格式化
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.UseCurrentTimeAsDefaultValue">
+            <summary>
+            日期默认值
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.CanMulteSelect">
+            <summary>
+            可以多选
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.DataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Precision">
+            <summary>
+            精度
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.Scale">
+            <summary>
+            小数位数
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.BasePropertyInfo.ForeignProperty">
+            <summary>
+            引用外部属性
+            </summary>
+        </member>
+        <member name="T:KrasERP.Core.Models.CustomDynamicData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.CustomDynamicData.Fix">
+            <summary>
+            获得/设置 固定列
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.CustomDynamicData.Columns">
+            <summary>
+            存储每列值信息 Key 列名 Value 为列值
+            </summary>
+        </member>
+        <member name="M:KrasERP.Core.Models.CustomDynamicData.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="fix"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:KrasERP.Core.Models.CustomDynamicData.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KrasERP.Core.Models.CustomDynamicData.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.Models.CustomDynamicData.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="binder"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KrasERP.Core.Models.Foo">
+            <summary>
+            Demo示例数据
+            Demo sample data
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.DateTime">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Address">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Count">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Complete">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Education">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.Foo.Hobby">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:KrasERP.Core.Models.Foo.Random">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KrasERP.Core.Models.Foo.Generate(Microsoft.Extensions.Localization.IStringLocalizer{KrasERP.Core.Models.Foo})">
+            <summary>
+            生成Foo类,随机数据
+            Generate Foo class, random data
+            </summary>
+            <param name="localizer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.Models.Foo.GenerateFoo(Microsoft.Extensions.Localization.IStringLocalizer{KrasERP.Core.Models.Foo},System.Int32)">
+            <summary>
+            生成Foo类,随机数据
+            Generate Foo class, random data
+            </summary>
+            <returns>返回一个Foo类的List，Return a List of Foo class</returns>
+        </member>
+        <member name="M:KrasERP.Core.Models.Foo.GetAvatarUrl(System.Int32)">
+            <summary>
+            通过 Id 获取头像链接
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.Models.Foo.GetTitle">
+            <summary>
+            通过 Id 获取 Title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KrasERP.Core.Models.Foo.GetTitle(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KrasERP.Core.Models.EnumEducation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:KrasERP.Core.Models.EnumEducation.Primary">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:KrasERP.Core.Models.EnumEducation.Middle">
+             <summary>
+            
+             </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+﻿@using Newtonsoft.Json.Linq;
+<h3>FiedCompont</h3>
+<DynamicComponent Type="@componentType" Parameters="@parameters" />
+@code {
+    [Parameter]
+    public Type componentType { get; set; }
+    [Parameter]
+    public IDictionary<string, object> parameters { get; set; }
+
+    [Parameter]
+    public Guid FormID { get; set; }
+
+    private JArray ddd;
+
+    protected override Task OnInitializedAsync()
+    {
+        return base.OnInitializedAsync();
+    }
+}
