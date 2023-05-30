@@ -1,8 +1,86 @@
 ﻿@page "/"
 @using KrasERP.Core.SeedDatas;
+@using KrasERP.Web.Core;
 @using KrasERP.Web.Entry.Componts;
-@inject ISystemService systemService;
-@using Microsoft.AspNetCore;
+@using KrasERP.Web.Entry.Models;
 @using Newtonsoft.Json.Linq;
+@inject WeatherForecastService ForecastService
+
+@inherits LayoutComponentBase
+<Button Icon="fa-solid fa-circle-plus" OnClick="@(() => AddSearchGridTab(ItemTypeInfoSeedData.ItemTypeID))" Text="添加">
+</Button>
+<Tab IsBorderCard="true" Placement="Placement.Top" @ref="TabSet" IsLazyLoadTabItem="true">
+
+</Tab>
+
+@code {
+    public Tab TabSet;
+
+    List<string> forecasts111;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts111 = new();
+
+        foreach (var item in Enumerable.Range(1, 10))
+        {
+            forecasts111.Add( DateTime.Now.AddMinutes(item).ToString());
+        }
+    }
 
 
+    public Task AddSearchGridTab(Guid ItemTypeID)
+    {
+        System.Console.WriteLine("MainLayout:AddSearchGridTab");
+        var text = $"Tab {TabSet.Items.Count() + 1}";
+        var tabTitle = text;// "";
+        var context = "";
+        var icon = "";
+        //var formRender=
+        var i = 0;
+        TabSet.AddTab(new Dictionary<string, object?>
+            {
+                [nameof(TabItem.Icon)] = icon,
+                [nameof(TabItem.Text)] = tabTitle,
+                //[nameof(TabItem.IsActive)] = true,
+                [nameof(TabItem.ChildContent)] = new RenderFragment((builder) =>
+                {
+                    builder.OpenComponent<MainGrid>(0);
+                    builder.AddAttribute(i++, "itemTypeId", ItemTypeInfoSeedData.ItemTypeID);
+                    builder.AddAttribute(i++, "AddFormTab", AddFormTab);
+                    builder.AddAttribute(i++, "TabSet", TabSet);
+                    builder.CloseComponent();
+                })
+            });
+        return Task.CompletedTask;
+    }
+
+    public Task AddFormTab(CustomDynamicColumnsObjectData item, JArray BasePropertys)
+    {
+        System.Console.WriteLine("MainLayout:AddFormTab");
+        var text = $"Tab {TabSet.Items.Count() + 1}";
+        var tabTitle = text;// "";
+        var context = "";
+        var icon = "";
+        //var formRender=
+        var i = 0;
+        TabSet.AddTab(new Dictionary<string, object?>
+            {
+                [nameof(TabItem.Icon)] = icon,
+                [nameof(TabItem.Text)] = tabTitle,
+                [nameof(TabItem.IsActive)] = true,
+                [nameof(TabItem.ChildContent)] = new RenderFragment((builder) =>
+               {
+                   builder.OpenComponent<FormCompont>(0);
+                   builder.AddAttribute(i++, "ItemTypeID", Guid.Parse(item.Fix));
+                   builder.AddAttribute(i++, "Item", item);
+                   builder.AddAttribute(i++, "BasePropertys", BasePropertys);
+                   builder.CloseComponent();
+               }),
+
+            });
+
+        return Task.CompletedTask;
+    }
+
+}

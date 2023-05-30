@@ -6,13 +6,12 @@
 @using Newtonsoft.Json.Linq;
 @using System.Data.Common;
 @using Npgsql;
-
-
-<div class=" co">
-</div>
+@using Newtonsoft.Json;
 @tem_render
+<BootstrapInput TValue="string" Value="jjj.Value"></BootstrapInput>
 
 
+@JsonConvert.SerializeObject(dictCompontsInstant)
 
 @code {
 
@@ -26,66 +25,86 @@
 
     private RenderFragment tem_render;
 
-
+    inputCls? jjj = new inputCls { Value = "1111" };
+    Dictionary<string, object> dictCompontsInstant = new Dictionary<string, object>();
     protected override async Task OnInitializedAsync()
     {
-        System.Console.WriteLine("Form:OnInitializedAsync");
-        var sql = "select relatedid from kras.view where  sourceid=@sourceid";
-        var dict = new Dictionary<string, object>();
-        dict.Add("sourceid", new Guid(Item.GetValue("id").ToString()));
-        if (Item.GetValue("classification") != null && Item.GetValue("classification").ToString() != "")
-        {
-            sql += " and  form_classification=@classification";
-            dict.Add("sourceid", Item.GetValue("classification"));
-        }
-        var fID = sqlRepository.SqlScalar(sql, dict);
-        if (fID != null)
-        {
-            FormID = Guid.Parse(fID.ToString());
-        }
 
-        var fieldInfos = sqlRepository.SqlQuery("select *  from  kras.field where  sourceid=@FormID", new { FormID });
-        var fieldRows = MapperUtils.DataTable2JArray(fieldInfos);
 
-        var dictCompontsInstant = new Dictionary<string, object>();
-        tem_render = new RenderFragment((builder) =>
-        {
-            var i = 0;
-            // builder.AddMarkupContent(i++, new MarkupString("<Button>新make</Button>").Value);
-            foreach (JObject fieldInfo in fieldRows)
-            {
-                if (fieldInfo["fieldtype"].Value<int>() == (int)FieldType.Text)
-                {
-                    builder.OpenComponent<BootstrapInput<string>>(i++);
-                    BootstrapInput<string> input = new BootstrapInput<string>();
-                    var fieldName = fieldInfo[nameof(BaseField.Name).ToLower()].ToString();
-                    if (dictCompontsInstant.ContainsKey(fieldName))
-                    {
-                        dictCompontsInstant[fieldName] = input;
-                    }
-                    else
-                    {
-                        dictCompontsInstant.Add(fieldName, input);
-                    }
-                    var t_value=Item.GetValue(BasePropertys.Where(l => l["id"]?.ToString() == fieldInfo[nameof(BaseField.PropertyInfoId).ToLower()].ToString()).FirstOrDefault()?["name"]?.ToString() ?? throw Oops.Bah("错误的绑定的属性")).ToString();
-                    dynamic? tem_value = new { value = t_value };
-                    builder.AddAttribute(i++, "name", fieldName);
-                    builder.AddAttribute(i++, nameof(BootstrapInput<string>.Color), Color.Primary);
-                    builder.AddAttribute(i++, nameof(BootstrapInput<string>.DisplayText), fieldInfo[nameof(BaseField.Label).ToLower()].ToString());
-                    builder.AddAttribute(i++, "style", fieldInfo[nameof(BaseField.Css).ToLower()]?.Value<string>() ?? "");
-                    //builder.AddAttribute(i++, "ref", input);
-                    builder.AddAttribute(i++, "Value", tem_value.value);
-                    builder.AddAttribute(i++, "ShowLabel", true);
-                    builder.CloseComponent();
-                }
-            }
 
-        });
+
+
+
         // StaticColumnList = propRows.Where(l => (bool)l[nameof(BasePropertyInfo.Searchable).ToLower()]).Select(l => l["name"].ToString()).ToList();
 
         // CustomDynamicItems =
         // Enumerable.Range(0, dataRows.Count).Select(index => new CustomDynamicColumnsObjectData(dataRows[index]["id"].ToString(),
         //  StaticColumnList.ToDictionary(d => d, d => (object?)$"{dataRows[index][d]}")));
         await base.OnInitializedAsync();
+    }
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            System.Console.WriteLine("Form:OnInitializedAsync");
+            var sql = "select relatedid from kras.view where  sourceid=@sourceid";
+            var dict = new Dictionary<string, object>();
+            dict.Add("sourceid", new Guid(Item.GetValue("id").ToString()));
+            if (Item.GetValue("classification") != null && Item.GetValue("classification").ToString() != "")
+            {
+                sql += " and  form_classification=@classification";
+                dict.Add("sourceid", Item.GetValue("classification"));
+            }
+            var fID = sqlRepository.SqlScalar(sql, dict);
+            if (fID != null)
+            {
+                FormID = Guid.Parse(fID.ToString());
+            }
+
+            var fieldInfos = sqlRepository.SqlQuery("select *  from  kras.field where  sourceid=@FormID", new { FormID });
+            var fieldRows = MapperUtils.DataTable2JArray(fieldInfos);
+            tem_render = new RenderFragment((builder) =>
+          {
+              var i = 0;
+              // builder.AddMarkupContent(i++, new MarkupString("<Button>新make</Button>").Value);
+              foreach (JObject fieldInfo in fieldRows)
+              {
+                  if (fieldInfo["fieldtype"].Value<int>() == (int)FieldType.Text)
+                  {
+
+                      BootstrapInput<string> input = new BootstrapInput<string>();
+                      var fieldName = fieldInfo[nameof(BaseField.Name).ToLower()].ToString();
+                      var t_value = Item.GetValue(BasePropertys.Where(l => l["id"]?.ToString() == fieldInfo[nameof(BaseField.PropertyInfoId).ToLower()].ToString()).FirstOrDefault()?["name"]?.ToString() ?? throw Oops.Bah("错误的绑定的属性")).ToString();
+                      //dynamic? tem_value = new inputCls { value = t_value };
+                      inputCls? tem_value = new inputCls { Value = t_value };
+                      //if (dictCompontsInstant.ContainsKey(fieldName))
+                      //{
+                      //    dictCompontsInstant[fieldName] = tem_value;
+                      //}
+                      //else
+                      {
+                          dictCompontsInstant.Add(fieldName, tem_value);
+                      }
+                      builder.OpenComponent<BootstrapInput<string>>(i++);
+                   
+                      builder.AddAttribute(i++, "name", fieldName);
+                      builder.AddAttribute(i++, nameof(BootstrapInput<string>.Color), Color.Primary);
+                      builder.AddAttribute(i++, nameof(BootstrapInput<string>.DisplayText), fieldInfo[nameof(BaseField.Label).ToLower()].ToString());
+                      builder.AddAttribute(i++, "style", fieldInfo[nameof(BaseField.Css).ToLower()]?.Value<string>() ?? "");
+                      //builder.AddAttribute(i++, "ref", input);
+                      builder.AddAttribute(i++, nameof(BootstrapInput<string>.Value), tem_value.Value);
+                      builder.AddAttribute(i++, "ShowLabel", true);
+                      builder.CloseComponent();
+                  }
+              }
+
+          });
+            StateHasChanged();
+        }
+
+
+        base.OnAfterRender(firstRender);
     }
 }

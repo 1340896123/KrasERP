@@ -1,41 +1,23 @@
-﻿
-@page "/dyn"
-@using System.Data;
-@using System.Diagnostics.CodeAnalysis;
-@using KrasERP.Core.Models;
-@using System.ComponentModel.DataAnnotations;
-@using Microsoft.Extensions.Localization;
-@*@inject IStringLocalizer<Foo> Localizer*@
-<Table TItem="DynamicObject" DynamicContext="DataTableDynamicContext" />
+﻿@page "/ddy"
+
+<Tab IsBorderCard="true">
+    <TabItem Text="DDD">
+        <Counter></Counter>
+    </TabItem>
+    <TabItem Text="AA">
+        <FetchData></FetchData>
+    </TabItem>
+    <TabItem Text="@TabItemText">
+    </TabItem>
+</Tab>
 
 @code {
-    [NotNull]
-    private DataTableDynamicContext? DataTableDynamicContext { get; set; }
+    private string TabItemText { get; set; } = "Test";
 
-    private DataTable UserData { get; } = new DataTable();
-
-    /// <summary>
-    /// OnInitialized 方法
-    /// </summary>
-    protected override void OnInitialized()
+    private Task OnSetTitle(string text)
     {
-
-        base.OnInitialized();
+        TabItemText = text;
+        StateHasChanged();
+        return Task.CompletedTask;
     }
-
-   
-
-    private DataTable PageDataTable { get; set; } = new DataTable();
-
-    private int PageItems { get; set; }
-
-    private int TotalCount { get; set; }
-
-    private int PageIndex { get; set; } = 1;
-
-    private int PageCount { get; set; }
-
-    [NotNull]
-    private List<Foo>? PageFoos { get; set; }
-
 }
