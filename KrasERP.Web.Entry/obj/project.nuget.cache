@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KJfqmN2OHHv3kUp16vlDJQIxI8kx1zkeA4fd/SqL3XGNtwKnlDg0X1R5U9Hxta3SS08yeQ1uXd/K2mr/q7NNCg==",
+  "dgSpecHash": "lG7GvbQHrSOOnJ74TXfFGsGxnLVBzPDOa7dulT3RtJxLy3+RS2gg0RJxIF1He387JNdABrGoA23oKfPFi0m6sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jieok\\Desktop\\KrasERP-master\\KrasERP.Web.Entry\\KrasERP.Web.Entry.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,7 @@
     "C:\\Users\\jieok\\.nuget\\packages\\automapper.data\\7.0.2\\automapper.data.7.0.2.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\ben.demystifier\\0.4.1\\ben.demystifier.0.4.1.nupkg.sha512",
-    "C:\\Users\\jieok\\.nuget\\packages\\bootstrapblazor\\7.6.6\\bootstrapblazor.7.6.6.nupkg.sha512",
+    "C:\\Users\\jieok\\.nuget\\packages\\bootstrapblazor\\7.7.0\\bootstrapblazor.7.7.0.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\bootstrapblazor.fontawesome\\7.4.2\\bootstrapblazor.fontawesome.7.4.2.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\furion\\4.8.8.10\\furion.4.8.8.10.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\furion.extras.authentication.jwtbearer\\4.8.8.10\\furion.extras.authentication.jwtbearer.4.8.8.10.nupkg.sha512",
@@ -85,7 +85,7 @@
     "C:\\Users\\jieok\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql.design\\1.1.0\\npgsql.entityframeworkcore.postgresql.design.1.1.0.nupkg.sha512",
-    "C:\\Users\\jieok\\.nuget\\packages\\radzen.blazor\\4.11.1\\radzen.blazor.4.11.1.nupkg.sha512",
+    "C:\\Users\\jieok\\.nuget\\packages\\radzen.blazor\\4.12.0\\radzen.blazor.4.12.0.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\jieok\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

@@ -1,9 +1,5 @@
 ﻿using Irony.Parsing;
-using Microsoft.Extensions.Configuration;
 using System;
-using System.IO;
-using System.Linq;
-using System.Transactions;
 
 namespace KrasERP.Core.EQL
 {
@@ -11,7 +7,7 @@ namespace KrasERP.Core.EQL
     {
         public static void Interpret(string input)
         {
-        
+
             var sqlgr = new SqlGrammar();
 
             LanguageData language = new LanguageData(sqlgr);

@@ -2,14 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 // Website: https://www.blazor.zone or https://argozhang.github.io/
 
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Localization;
-using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing;
 using System.Linq;
 
 namespace KrasERP.Core.Models;
@@ -34,7 +31,7 @@ public class Foo
     ///
     /// </summary>
     [Required(ErrorMessage = "{0}不能为空")]
-  
+
     [Display(Name = "姓名")]
     public string? Name { get; set; }
 

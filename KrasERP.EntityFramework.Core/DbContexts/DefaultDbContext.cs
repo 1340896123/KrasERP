@@ -1,8 +1,5 @@
 ﻿using Furion.DatabaseAccessor;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.OpenApi.Extensions;
-using System.Linq;
 
 namespace KrasERP.EntityFramework.Core.DbContexts
 {

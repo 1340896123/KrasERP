@@ -1,10 +1,6 @@
 ﻿using Furion.DatabaseAccessor;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KrasERP.Core.Models
 {
@@ -25,7 +21,7 @@ namespace KrasERP.Core.Models
         /// </summary>
         public string Label { get; set; }
 
-        public string Css { get; set; } 
+        public string Css { get; set; }
         /// <summary>
         /// 字段类型
         /// </summary>
@@ -36,22 +32,22 @@ namespace KrasERP.Core.Models
         /// </summary>
         public BasePropertyInfo PropertyInfo { get; set; }
 
-        public Guid PropertyInfoId { get; set; } 
+        public Guid PropertyInfoId { get; set; }
 
         /// <summary>
         /// 字段类型
         /// </summary>
-        public BaseForm  Source { get; set; }
+        public BaseForm Source { get; set; }
 
-        public Guid SourceId { get; set; } 
+        public Guid SourceId { get; set; }
     }
 
     public enum FieldType
-    { 
-       Text,
-       List,
-       TextArea,
-       Radio,
-       CheckBox
+    {
+        Text,
+        List,
+        TextArea,
+        Radio,
+        CheckBox
     }
 }

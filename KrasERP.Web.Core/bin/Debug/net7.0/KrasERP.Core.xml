@@ -377,5 +377,15 @@
             
              </summary>
         </member>
+        <member name="P:KrasERP.Core.Models.RelationshipType.SourceID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KrasERP.Core.Models.RelationshipType.RelatedId">
+            <summary>
+            
+            </summary>
+        </member>
     </members>
 </doc>

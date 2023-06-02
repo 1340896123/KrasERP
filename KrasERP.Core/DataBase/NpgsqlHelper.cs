@@ -1,17 +1,10 @@
 ﻿using Furion.DatabaseAccessor;
 using Furion.FriendlyException;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Drawing;
 using System.Linq;
-using System.Net.Security;
-using System.Reflection;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 
 

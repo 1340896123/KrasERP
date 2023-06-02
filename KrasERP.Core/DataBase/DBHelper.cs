@@ -1,26 +1,11 @@
-﻿using Furion.ClayObject.Extensions;
-using Furion.DatabaseAccessor;
+﻿using Furion.DatabaseAccessor;
 using Furion.FriendlyException;
 using KrasERP.Core.Models;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Razor.Language.Intermediate;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Npgsql;
-using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlTypes;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace KrasERP.Core.DataBase
 {
@@ -32,7 +17,7 @@ namespace KrasERP.Core.DataBase
         public static async Task CreateItemType(string tableName, List<BasePropertyInfo> basePropertyInfos)
         {
             //var tableName = (string)sqlRepository.SqlScalar($"select name from  kras.ItemType where id=@id", new { id = basePropertyInfos.First().SourceID });
-            basePropertyInfos.AddRange(GetItemTypePropertyInfos());  
+            basePropertyInfos.AddRange(GetItemTypePropertyInfos());
             var hasDuplicates = basePropertyInfos.GroupBy(c => c.Name).Where(g => g.Count() > 1);
             //重复列名
             var repeatNames = hasDuplicates.Select(g => g.Key);

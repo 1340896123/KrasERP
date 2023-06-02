@@ -1,0 +1,14 @@
+﻿@page "/bind-multiple-input"
+
+
+<p>
+    <input @bind="inputValue" />
+</p>
+
+<p>
+    <code>inputValue</code>: @inputValue
+</p>
+
+@code {
+    private int inputValue = 123;
+}

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 
 class Class1
 {
-   public static void Start()  
+    public static void Start()
     {
         // 设置本地监听端口
         int localPort = 8888;

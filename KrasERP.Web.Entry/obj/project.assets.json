@@ -71,7 +71,7 @@
           "lib/netstandard2.1/Ben.Demystifier.dll": {}
         }
       },
-      "BootstrapBlazor/7.6.6": {
+      "BootstrapBlazor/7.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components.Authorization": "7.0.0",
@@ -1447,7 +1447,7 @@
           "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll": {}
         }
       },
-      "Radzen.Blazor/4.11.1": {
+      "Radzen.Blazor/4.12.0": {
         "type": "package",
         "dependencies": {
           "LibSassBuilder": "2.0.1",
@@ -3175,14 +3175,14 @@
         "readme.md"
       ]
     },
-    "BootstrapBlazor/7.6.6": {
-      "sha512": "JTdPbtDEUe0gIzOAxF0GsPkFrv6ZngFvibph6ZZIl7glX7B9ERY6tAJaqzFGYONnIzQ9UtACvh2+PF45b3WKjA==",
+    "BootstrapBlazor/7.7.0": {
+      "sha512": "5PvYtLyV4MtKCciiOoIBZGCnxiZ01eU3VWgl2q+ElffsAdp8ErR9qt8jmLBTfzodS8pp5yBx/GkB23FfZex6kQ==",
       "type": "package",
-      "path": "bootstrapblazor/7.6.6",
+      "path": "bootstrapblazor/7.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "bootstrapblazor.7.6.6.nupkg.sha512",
+        "bootstrapblazor.7.7.0.nupkg.sha512",
         "bootstrapblazor.nuspec",
         "build/BootstrapBlazor.props",
         "build/Microsoft.AspNetCore.StaticWebAssets.props",
@@ -3205,6 +3205,7 @@
         "staticwebassets/Components/Captcha/Captcha.razor.js",
         "staticwebassets/Components/Carousel/Carousel.razor.js",
         "staticwebassets/Components/Console/Console.razor.js",
+        "staticwebassets/Components/ContextMenu/ContextMenu.razor.js",
         "staticwebassets/Components/CountUp/CountUp.razor.js",
         "staticwebassets/Components/DateTimePicker/DateTimePicker.razor.js",
         "staticwebassets/Components/DateTimePicker/TimePickerCell.razor.js",
@@ -3214,6 +3215,7 @@
         "staticwebassets/Components/Filters/TableFilter.razor.js",
         "staticwebassets/Components/GoTop/GoTop.razor.js",
         "staticwebassets/Components/Handwritten/Handwritten.razor.js",
+        "staticwebassets/Components/IFrame/IFrame.razor.js",
         "staticwebassets/Components/ImagePreviewer/ImagePreviewer.razor.js",
         "staticwebassets/Components/ImageViewer/ImageViewer.razor.js",
         "staticwebassets/Components/Input/BootstrapInput.razor.js",
@@ -5405,10 +5407,10 @@
         "npgsql.entityframeworkcore.postgresql.design.nuspec"
       ]
     },
-    "Radzen.Blazor/4.11.1": {
-      "sha512": "h/p17Evm2u8Ugs/8/9Je6DvpPjdg2IJgjHkFfr84LLCYVkMaBjv5uOhhcxoKoOOHy4YR3T2RpIoqQp5DV673kg==",
+    "Radzen.Blazor/4.12.0": {
+      "sha512": "TJf6WOev6gXrGx1GW4kkTb71DCWqv2tvth03K3Mee4scjFtR34CkbHXgLVSYHa5cexqgkHSz2HB5j6KE8bxP9Q==",
       "type": "package",
-      "path": "radzen.blazor/4.11.1",
+      "path": "radzen.blazor/4.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5427,7 +5429,7 @@
         "lib/net7.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.4.11.1.nupkg.sha512",
+        "radzen.blazor.4.12.0.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -9532,12 +9534,12 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "BootstrapBlazor >= 7.6.6",
+      "BootstrapBlazor >= 7.7.0",
       "BootstrapBlazor.FontAwesome >= 7.4.2",
       "KrasERP.Web.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
       "Newtonsoft.Json >= 13.0.3",
-      "Radzen.Blazor >= 4.11.1"
+      "Radzen.Blazor >= 4.12.0"
     ]
   },
   "packageFolders": {
@@ -9590,7 +9592,7 @@
         "dependencies": {
           "BootstrapBlazor": {
             "target": "Package",
-            "version": "[7.6.6, )"
+            "version": "[7.7.0, )"
           },
           "BootstrapBlazor.FontAwesome": {
             "target": "Package",
@@ -9608,7 +9610,7 @@
           },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[4.11.1, )"
+            "version": "[4.12.0, )"
           }
         },
         "imports": [

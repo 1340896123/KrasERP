@@ -1,7 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Microsoft.CodeAnalysis.CSharp;
-using Npgsql;
 
 
 //var addDefaultValueCmdText = $"ALTER TABLE @tableName ALTER COLUMN @columnName SET DEFAULT @defaultValue ";
@@ -20,7 +18,6 @@ using Npgsql;
 //comm.Parameters.Add(new NpgsqlParameter("@tableName", "kkkk"));
 //comm.Parameters.Add(new NpgsqlParameter("@pk", "PRIMARY KEY"));
 //var fff =await comm.ExecuteScalarAsync();
-
 
 Class1.Start();
 Console.WriteLine("Hello, World!");

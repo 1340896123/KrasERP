@@ -1,0 +1,24 @@
+﻿@using KrasERP.Web.Entry.Models;
+@using Newtonsoft.Json.Linq;
+<h3>RelationshipItemGroup</h3>
+<RelationshipItemView></RelationshipItemView>
+<RelationshipGrid></RelationshipGrid>
+@code {
+
+    [Parameter]
+    public Guid ItemTypeID { get; set; }
+    [Parameter]
+    public CustomDynamicColumnsObjectData Item { get; set; }
+    [Parameter]
+    public JArray BasePropertys { get; set; }
+    [Parameter]
+    public Guid RelationshipID { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+    }
+
+
+}

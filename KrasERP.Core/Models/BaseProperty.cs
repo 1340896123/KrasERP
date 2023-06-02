@@ -1,16 +1,8 @@
 ﻿using Furion.DatabaseAccessor;
-using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Npgsql.Internal.TypeHandlers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using static Npgsql.PostgresTypes.PostgresCompositeType;
 
 namespace KrasERP.Core.Models
 {
@@ -41,7 +33,7 @@ namespace KrasERP.Core.Models
         /// <summary>
         /// 网格宽度
         /// </summary>
-        public int GridWidth { get; set; } 
+        public int GridWidth { get; set; }
 
         /// <summary>
         /// 描述
@@ -102,8 +94,8 @@ namespace KrasERP.Core.Models
 
         public Guid SourceID { get; set; }
 
-        public ItemTypeInfo Source { get; set; } 
-        public Guid Related { get; set; } 
+        public ItemTypeInfo Source { get; set; }
+        public Guid Related { get; set; }
 
         /// <summary>
         /// 正则表达式

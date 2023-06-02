@@ -8,12 +8,12 @@
     ".NETCoreApp,Version=v7.0": {
       "KrasERP.Web.Entry/1.0.0": {
         "dependencies": {
-          "BootstrapBlazor": "7.6.6",
+          "BootstrapBlazor": "7.7.0",
           "BootstrapBlazor.FontAwesome": "7.4.2",
           "KrasERP.Web.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.5",
           "Newtonsoft.Json": "13.0.3",
-          "Radzen.Blazor": "4.11.1"
+          "Radzen.Blazor": "4.12.0"
         },
         "runtime": {
           "KrasERP.Web.Entry.dll": {}
@@ -75,7 +75,7 @@
           }
         }
       },
-      "BootstrapBlazor/7.6.6": {
+      "BootstrapBlazor/7.7.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.Authorization": "7.0.0",
           "Microsoft.AspNetCore.Components.Web": "7.0.0",
@@ -87,14 +87,14 @@
         },
         "runtime": {
           "lib/net7.0/BootstrapBlazor.dll": {
-            "assemblyVersion": "7.6.6.0",
-            "fileVersion": "7.6.6.0"
+            "assemblyVersion": "7.7.0.0",
+            "fileVersion": "7.7.0.0"
           }
         }
       },
       "BootstrapBlazor.FontAwesome/7.4.2": {
         "dependencies": {
-          "BootstrapBlazor": "7.6.6"
+          "BootstrapBlazor": "7.7.0"
         },
         "runtime": {
           "lib/net7.0/BootstrapBlazor.FontAwesome.dll": {
@@ -744,7 +744,7 @@
           }
         }
       },
-      "Radzen.Blazor/4.11.1": {
+      "Radzen.Blazor/4.12.0": {
         "dependencies": {
           "LibSassBuilder": "2.0.1",
           "Microsoft.AspNetCore.Components": "7.0.0",
@@ -753,8 +753,8 @@
         },
         "runtime": {
           "lib/net7.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "4.11.1.0",
-            "fileVersion": "4.11.1.0"
+            "assemblyVersion": "4.12.0.0",
+            "fileVersion": "4.12.0.0"
           }
         }
       },
@@ -1598,12 +1598,12 @@
       "path": "ben.demystifier/0.4.1",
       "hashPath": "ben.demystifier.0.4.1.nupkg.sha512"
     },
-    "BootstrapBlazor/7.6.6": {
+    "BootstrapBlazor/7.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JTdPbtDEUe0gIzOAxF0GsPkFrv6ZngFvibph6ZZIl7glX7B9ERY6tAJaqzFGYONnIzQ9UtACvh2+PF45b3WKjA==",
-      "path": "bootstrapblazor/7.6.6",
-      "hashPath": "bootstrapblazor.7.6.6.nupkg.sha512"
+      "sha512": "sha512-5PvYtLyV4MtKCciiOoIBZGCnxiZ01eU3VWgl2q+ElffsAdp8ErR9qt8jmLBTfzodS8pp5yBx/GkB23FfZex6kQ==",
+      "path": "bootstrapblazor/7.7.0",
+      "hashPath": "bootstrapblazor.7.7.0.nupkg.sha512"
     },
     "BootstrapBlazor.FontAwesome/7.4.2": {
       "type": "package",
@@ -2130,12 +2130,12 @@
       "path": "npgsql.entityframeworkcore.postgresql.design/1.1.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.design.1.1.0.nupkg.sha512"
     },
-    "Radzen.Blazor/4.11.1": {
+    "Radzen.Blazor/4.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-h/p17Evm2u8Ugs/8/9Je6DvpPjdg2IJgjHkFfr84LLCYVkMaBjv5uOhhcxoKoOOHy4YR3T2RpIoqQp5DV673kg==",
-      "path": "radzen.blazor/4.11.1",
-      "hashPath": "radzen.blazor.4.11.1.nupkg.sha512"
+      "sha512": "sha512-TJf6WOev6gXrGx1GW4kkTb71DCWqv2tvth03K3Mee4scjFtR34CkbHXgLVSYHa5cexqgkHSz2HB5j6KE8bxP9Q==",
+      "path": "radzen.blazor/4.12.0",
+      "hashPath": "radzen.blazor.4.12.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

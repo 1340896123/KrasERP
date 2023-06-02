@@ -2,14 +2,6 @@
 
 //SQLInterpreter.Interpret("");
 
-using AutoMapper;
-using AutoMapper.Data;
-using Furion.DatabaseAccessor;
-using Newtonsoft.Json.Linq;
-using System.Data;
-
-
-
 var host = Serve.Run(RunOptions.Default.WithArgs(args)
     // .ConfigureServices(services => services.AddScoped<ISqlRepository, SqlRepository>())
     .ConfigureServices(l => l.AddBootstrapBlazor())

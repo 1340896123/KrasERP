@@ -1,23 +1,56 @@
 ﻿@page "/ddy"
-
-<Tab IsBorderCard="true">
-    <TabItem Text="DDD">
-        <Counter></Counter>
-    </TabItem>
-    <TabItem Text="AA">
-        <FetchData></FetchData>
-    </TabItem>
-    <TabItem Text="@TabItemText">
-    </TabItem>
-</Tab>
+@using System.Diagnostics.CodeAnalysis;
+@using KrasERP.Core.Models;
+@using Microsoft.Extensions.Localization;
+<GroupBox Title="表单示例" style="margin-top: 1.5rem;">
+    <EditorForm Model="@Model" AutoGenerateAllItem="false">
+        <FieldItems>
+            <EditorItem @bind-Field="@context.Name"  />
+            <EditorItem @bind-Field="@context.Label"  />
+            <EditorItem @bind-Field="@context.LabelPlural"  />
+        </FieldItems>
+        <Buttons>
+            <Button Icon="fa-solid fa-floppy-disk" Text="提交" />
+        </Buttons>
+    </EditorForm>
+</GroupBox>
 
 @code {
-    private string TabItemText { get; set; } = "Test";
+    /// <summary>
+    /// Foo 类为Demo测试用，如有需要请自行下载源码查阅
+    /// Foo class is used for Demo test, please download the source code if necessary
+    /// https://gitee.com/LongbowEnterprise/BootstrapBlazor/blob/main/src/BootstrapBlazor.Shared/Data/Foo.cs
+    /// </summary>
+    [NotNull]
+    private ItemTypeInfo? Model { get; set; }
 
-    private Task OnSetTitle(string text)
+    [NotNull]
+    private IEnumerable<SelectedItem>? Hobbys { get; set; }
+
+    [Inject]
+    [NotNull]
+    private IStringLocalizer<ItemTypeInfo>? FooLocalizer { get; set; }
+
+    /// <summary>
+    /// OnInitialized
+    /// </summary>
+    protected override void OnInitialized()
     {
-        TabItemText = text;
-        StateHasChanged();
-        return Task.CompletedTask;
+        base.OnInitialized();
+
+
+        Model = new ItemTypeInfo()
+            {
+                Id = Guid.Parse("ea8b80f0-8191-4ba9-aed1-7fd1aa6f9f91"),
+                Name = "ItemType",
+                Label = "对象类",
+                LabelPlural = "对象类",
+                //RecordPermissions =new List<string> {
+                //    PermissionDefine.Ruler,
+                //    PermissionDefine.System
+                //},
+                System = true
+            };
+
     }
 }

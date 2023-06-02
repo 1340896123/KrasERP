@@ -1,12 +1,8 @@
 ﻿using Furion.DatabaseAccessor;
 using KrasERP.Core.Models;
-using KrasERP.Core.Permissions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KrasERP.Core.SeedDatas
 {
@@ -16,7 +12,8 @@ namespace KrasERP.Core.SeedDatas
 
         public IEnumerable<BasePropertyInfo> HasData(DbContext dbContext, Type dbContextLocator)
         {
-            return new List<BasePropertyInfo>()
+            var res = new List<BasePropertyInfo>();
+            var itemList = new List<BasePropertyInfo>()
             {
                 new BasePropertyInfo(){
                     Id=Guid.Parse("47aa96b0-b463-44a9-96f6-073a2f0afe01"),
@@ -76,7 +73,8 @@ namespace KrasERP.Core.SeedDatas
 
 
             };
-
+            res.AddRange(itemList);
+            return res;
         }
     }
 }

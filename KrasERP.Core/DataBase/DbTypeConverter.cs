@@ -1,13 +1,7 @@
 ﻿
 using Furion.FriendlyException;
-using Furion.JsonSerialization;
 using KrasERP.Core.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace KrasERP.Core.DataBase
 {

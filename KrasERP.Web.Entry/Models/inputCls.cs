@@ -1,7 +1,9 @@
 ﻿namespace KrasERP.Web.Entry.Models
 {
-    public class inputCls
+    public class InputCls
     {
-        public string Value { get; set; } 
+        private string Value;
+
+        public string Value1 { get => Value; set => Value = value; }
     }
 }

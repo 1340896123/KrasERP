@@ -1,5 +1,4 @@
 ﻿using Furion;
-using Furion.VirtualFileServer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;

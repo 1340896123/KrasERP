@@ -1,17 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KrasERP.Core.Mappers
 {
     public class MapperUtils
     {
-        public static  JArray DataTable2JArray(DataTable table)
+        public static JArray DataTable2JArray(DataTable table)
         {
             // 将 DataTable 转换为 List<Dictionary<string, object>>
             List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();

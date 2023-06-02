@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Componts/CustomerFilter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9udHNcQ3VzdG9tZXJGaWx0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Componts/FiedCompont.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9udHNcRmllZENvbXBvbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,8 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9udHNcUmVsYXRpb25zaGlwR3JpZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Componts/RelationshipItemGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9udHNcUmVsYXRpb25zaGlwSXRlbUdyb3VwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Componts/RelationshipItemView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9udHNcUmVsYXRpb25zaGlwSXRlbVZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Pages/DDDD.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRERERC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jieok/Desktop/KrasERP-master/KrasERP.Web.Entry/Pages/FetchData.razor]

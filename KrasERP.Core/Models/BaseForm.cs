@@ -1,10 +1,6 @@
 ﻿using Furion.DatabaseAccessor;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KrasERP.Core.Models
 {
@@ -12,7 +8,7 @@ namespace KrasERP.Core.Models
     /// 
     /// </summary>
     [Table("Form", Schema = "kras")]
-    public class BaseForm: EntityBase
+    public class BaseForm : EntityBase
     {
 
         /// <summary>
